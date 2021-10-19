@@ -1,0 +1,237 @@
+:root{
+     /* PRIMARY COLORS  */
+     --gradientColorStart:hsl(6, 100%, 80%);
+     --gradientColorEnd:hsl(335, 100%, 65%);
+
+     /* NEUTRAL COLORS  */
+        --paleBlue:hsl(243, 100%, 93%);
+        --greyishBlue:hsl(229, 7%, 55%);
+        --darkBlue:hsl(228, 56%, 26%);
+        --veryDarkBlue:hsl(229, 57%, 11%);
+     /* FONTS  */
+     --fontSize:15px;
+     --fontFam:'Raleway', sans-serif;
+     --fontWeight1:400;
+     --fontWeight2:700;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body{
+    height: 100%;
+    width: 100%;
+    background-color:var(--veryDarkBlue);
+    overflow: hidden;
+}
+
+main,
+.card,
+.card-data,
+.logo-container{
+    display: flex;
+}
+body{
+    background-image: url(/home/lee/Desktop/WebDevelopment/fylo-data-storage-component-master/images/bg-desktop.png);
+    background-repeat: no-repeat;
+    background-position:bottom;
+}
+
+main{
+    max-height: 45%;
+    min-width: 40%;
+    margin: 12em auto 0;
+    color:#fff;
+    justify-content: center;
+    align-items: center;
+    gap:5%;
+    font-family:var(--fontFam);
+    position: relative;
+    z-index: 2;
+}
+
+.cards{
+    flex: 0 0 20%;
+    background-color:var(--darkBlue);
+    padding: 3% 2%;
+    border-radius:15px;
+}
+
+/* HEADING  */
+
+.head{
+    border-top-right-radius:39%;
+    min-width: 15%;
+    max-height: 20%;
+    padding-bottom:1%;
+    position: relative;
+    z-index: 2;
+}
+
+.heading>img{
+    height:2.5em;
+    padding:1%;
+}
+.head::after{
+    background: inherit;
+    border-top-right-radius: 68%;
+    content: '';
+    display: block;
+    position: absolute;
+    height: 56%;
+    width: 37%;
+    top: 0%;
+    right: 0%;
+    z-index: -1;
+}
+
+
+.logo-container{
+    margin: 7% auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap:5%;
+    align-items: center;
+}
+.logo-container >div{
+    width: 15%;
+    height: 30%;
+    background: var(--veryDarkBlue);
+    border-radius: 25%;
+    text-align: center;
+    padding: 3% 1%;
+}
+.logo-container >div>img{
+    width: 45%;
+    height: 50%;
+    /* margin: 2% 3%; */
+}
+
+/* STATUS BAR  */
+.status{
+    min-width: 35%;
+    max-height: 29%;
+    position: relative;
+}
+
+.card-data{
+    flex-direction: row;
+    justify-content: space-between;
+    color:var(--paleBlue);
+}
+
+/* STATUS BAR  */
+.bar{
+    width: 100%;
+    height: 10%;
+    border-radius: 10px 8px;
+    background-color:var(--veryDarkBlue);
+    padding: 0.6%;
+    margin: 3% 0;
+}
+
+.data-used{
+    width: 75%;
+    height: 12%;
+    background: linear-gradient( to right ,var(--gradientColorStart) , var(--gradientColorEnd));
+    border-radius: inherit;
+
+    
+    padding: 0.5%;
+}
+
+.data-info,
+.useage{    
+    /* //FONT */
+    font-size: 1.5ch;
+    font-weight: var(--fontWeight1);
+}
+.round-ball{
+    width: 1%;
+    height: 3%;
+    padding: 1%;
+    border-radius: 40%;
+    background-color: #fff;
+    margin: 0.3% 0;
+    margin-left: 97%;
+    
+}
+
+/* COMMENT BOX */
+.comment{
+    background: #fff;
+    border-radius:12px;
+    color: #000;
+    font-weight: var(--fontWeight2);
+    font-size: 3ch;
+    padding: 3% 5%;
+    position: absolute;
+    right: 5%;
+    top:-25%;
+    text-align: center;
+    z-index: 2;
+}
+
+
+.comment::before{
+    background: inherit;
+    content: '';
+    display: block;
+    height: 49%;
+    width: 39%;
+    position: absolute;
+    right: -1%;
+    top: 43%;
+    transform: skew(6deg, 
+                    45deg);
+    z-index: -1;
+}
+
+span{
+    font-weight: var(--fontWeight2);
+    color: var(--greyishBlue);
+    /* float: right; */
+}
+
+.comment span{
+    font-size: 0.7ch;
+}
+
+.data-info{
+    font-weight: var(--fontWeight2);
+    font-size: 1ch;
+}
+
+.useage >span{
+    color: var(--paleBlue);
+}
+
+@media (min-width:375px) and (max-width :700px) {
+    body{
+        background-image:url(/home/lee/Desktop/WebDevelopment/fylo-data-storage-component-master/images/bg-mobile.png); 
+    }
+
+    main{
+        flex-direction: column;
+        align-items: center;
+    }
+    .cards{
+        width: 50%;
+        margin:1em 0;
+        padding: 5%;      
+    }
+
+    .comment{
+        top:82%;
+        right: 23%;
+        border-radius: 5%;
+    }
+    .comment::before{
+        display: none;
+    }
+
+}
